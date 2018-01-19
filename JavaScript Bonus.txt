@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script>
+function zero(array, value)                    # Define function 
+{
+    var a = array.length;
+    while (a--) 
+    {
+        if (array[a] === value) 
+        {
+            array.splice(a, 1);                # Splice() is used to add/remove any item(s) in an array
+        }
+    }
+    return array;
+}
+var data = [0, 1, 2, 'stop', 2, 0, 1, 'stop']; # Input values
+zero(data, 0);                                 # array = data, value = 0
+document.write(data , " --> with no zeros");    # writing into HTML output
+</script>
+</html>
