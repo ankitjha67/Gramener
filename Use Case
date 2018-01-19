@@ -104,17 +104,17 @@ X1 = np.array(X1)
 y1 = lable1.astype("float")
 y1 = np.array(y1)
 from sklearn.ensemble import ExtraTreesClassifier
-np.random.seed(1)
+np.random.seed(10)
 model1 = ExtraTreesClassifier()
 model1.fit(X1, y1)
 feature_importance1 = model1.feature_importances_
 print(model1.feature_importances_)
 
 feature_importance1 = 100.0 * (feature_importance1 / feature_importance1.max())
-sorted_idx1 = np.argsort(feature_importance1)
-pos1 = np.arange(sorted_idx1.shape[0]) + .8
-plt.barh(pos1, feature_importance1[sorted_idx1], align='center')
-plt.yticks(pos1, Xdata1.columns[sorted_idx1])
+sorted_idx2 = np.argsort(feature_importance1)
+pos1 = np.arange(sorted_idx2.shape[0]) + .8
+plt.barh(pos1, feature_importance1[sorted_idx2], align='center')
+plt.yticks(pos1, Xdata1.columns[sorted_idx2])
 plt.xlabel('Relative Importance')
 plt.title('Variable Importance')
 plt.savefig("feature_importance.png")
